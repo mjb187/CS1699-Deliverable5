@@ -1,9 +1,13 @@
 //Code refactored by Mike Byrne
 //	mjb187@pitt.edu
 
+// CHANGES
+//	- changed runArgs() to return -1 so the error code is not confused with the return values of 0,1 from Game.run().
+//	- made runGameLoop() public to facilitate testing.
+
 public class CoffeeMaker {
 
-	private int runGameLoop(Player p, House h, Game g) {
+	public int runGameLoop(Player p, House h, Game g) {
 		int toReturn = g.run();
 		return toReturn;
 	}
@@ -12,7 +16,7 @@ public class CoffeeMaker {
 		System.out.println("Instructions for Coffee Maker Quest - ");
 		System.out.println("You are a brave student trying to study for finals, but you need caffeine.");
 		System.out.println("The goal of the game is to collect sugar, coffee, and cream so that you can study.");
-		return 0;
+		return -1;
 	}
 	
 	public static void main(String[] args) {

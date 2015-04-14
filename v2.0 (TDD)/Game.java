@@ -1,6 +1,11 @@
 //Code refactored by Mike Byrne
 //	mjb187@pitt.edu
 
+// CHANGES
+//	- fixed bug where 'n' is not a recognized input
+//	- fixed bug where there is no Help menu
+//	- adapted doSomething() to accept the numerical representation of a win condition from the Player class
+
 import java.util.Scanner;
 
 public class Game {
@@ -15,7 +20,7 @@ public class Game {
 	
 	public int doSomething(String move) {
 		int toReturn = 0;
-		if (move.equals("N")) {
+		if (move.equalsIgnoreCase("N")) {
 			_house.moveNorth();
 		} else if (move.equalsIgnoreCase("S")) {
 			_house.moveSouth();
@@ -23,9 +28,11 @@ public class Game {
 			_house.look(_player);
 		} else if (move.equalsIgnoreCase("I")) {
 			_player.showInventory();
+		} else if (move.equalsIgnoreCase("H")) {
+			helpMenu();
 		} else if (move.equalsIgnoreCase("D")) {
-			boolean finalStatus = _player.drink();
-			if (finalStatus) {
+			int finalStatus = _player.drink();
+			if (finalStatus == 111) {
 				toReturn = 1;
 			} else {
 				toReturn = -1;
@@ -34,6 +41,16 @@ public class Game {
 			System.out.println("What?");
 		}
 		return toReturn;
+	}
+	
+	public void helpMenu() {
+		System.out.println("Game Commands:");
+		System.out.println("\tN: move north");
+		System.out.println("\tS: move south");
+		System.out.println("\tL: look around the room");
+		System.out.println("\tI: check inventory");
+		System.out.println("\tH: open help menu");
+		System.out.println("\tD: drink your coffee!");
 	}
 	
 	public int run() {
@@ -47,7 +64,7 @@ public class Game {
 		
 		while (!gameOver) {
 			System.out.println(_house.getCurrentRoomInfo());
-			System.out.println(" INSTRUCTIONS (N,S,L,I,D) > ");
+			System.out.println(" INSTRUCTIONS (N,S,L,I,H,D) > ");
 			move = in.nextLine();
 			int status = doSomething(move);
 			if (status == 1) {
