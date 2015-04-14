@@ -17,7 +17,7 @@ import org.junit.Test;
 public class RoomTest 
 {
 
-	//check that a room with all three items in it will be properly verified
+	//check that a room with all three items in it will be properly verified using hasItem()
 	@Test
 	public void testHasItem_allTrue() 
 	{
@@ -29,7 +29,7 @@ public class RoomTest
 	
 	/*-------------------------------------------------*/
 	
-	//check that a room with two items in it will be properly verified
+	//check that a room with two items in it will be properly verified using hasItem()
 	@Test
 	public void testHasItem_twoTrue() 
 	{
@@ -41,7 +41,7 @@ public class RoomTest
 	
 	/*-------------------------------------------------*/
 	
-	//check that a room with only one item in it will be properly verified
+	//check that a room with only one item in it will be properly verified using hasItem()
 	@Test
 	public void testHasItem_oneTrue() 
 	{
@@ -53,7 +53,7 @@ public class RoomTest
 	
 	/*-------------------------------------------------*/
 	
-	//check that a room with no items in it will be properly verified
+	//check that a room with no items in it will be properly verified using hasItem()
 	@Test
 	public void testHasItem_allFalse() 
 	{
@@ -65,7 +65,7 @@ public class RoomTest
 	
 	/*-------------------------------------------------*/
 	
-	//check that a room with sugar is properly validated
+	//check that a room with sugar is properly validated using hasSugar()
 	@Test
 	public void testHasSugar_true() 
 	{
@@ -77,7 +77,7 @@ public class RoomTest
 	
 	/*-------------------------------------------------*/
 	
-	//check that a room without sugar is properly validated
+	//check that a room without sugar is properly validated using hasSugar()
 	@Test
 	public void testHasSugar_false() 
 	{
@@ -89,7 +89,7 @@ public class RoomTest
 	
 	/*-------------------------------------------------*/
 	
-	//check that a room with cream is properly validated
+	//check that a room with cream is properly validated using hasCream()
 	@Test
 	public void testHasCream_true() 
 	{
@@ -101,7 +101,7 @@ public class RoomTest
 	
 	/*-------------------------------------------------*/
 	
-	//check that a room without cream is properly validated
+	//check that a room without cream is properly validated using hasCream()
 	@Test
 	public void testHasCream_false() 
 	{
@@ -113,7 +113,7 @@ public class RoomTest
 	
 	/*-------------------------------------------------*/
 	
-	//check that a room with coffee is properly validated
+	//check that a room with coffee is properly validated using hasCoffee()
 	@Test
 	public void testHasCoffee_true() 
 	{
@@ -125,7 +125,7 @@ public class RoomTest
 	
 	/*-------------------------------------------------*/
 	
-	//check that a room without coffee is properly validated
+	//check that a room without coffee is properly validated using hasCoffee()
 	@Test
 	public void testHasCoffee_false() 
 	{
@@ -137,7 +137,7 @@ public class RoomTest
 	
 	/*-------------------------------------------------*/
 	
-	//check that a room with a north exit is properly validated
+	//check that a room with a north exit is properly validated using northExit()
 	@Test
 	public void testNorthExit_true() 
 	{
@@ -149,7 +149,7 @@ public class RoomTest
 	
 	/*-------------------------------------------------*/
 	
-	//check that a room without a north exit is properly validated
+	//check that a room without a north exit is properly validated using northExit()
 	@Test
 	public void testNorthExit_false() 
 	{
@@ -161,7 +161,7 @@ public class RoomTest
 	
 	/*-------------------------------------------------*/
 	
-	//check that a room with both exits is properly validated
+	//check that a room with both exits is properly validated using northExit()
 	@Test
 	public void testNorthExit_both() 
 	{
@@ -173,7 +173,7 @@ public class RoomTest
 	
 	/*-------------------------------------------------*/
 	
-	//check that a room with a south exit is properly validated
+	//check that a room with a south exit is properly validated using southExit()
 	@Test
 	public void testSouthExit_true() 
 	{
@@ -185,7 +185,7 @@ public class RoomTest
 	
 	/*-------------------------------------------------*/
 	
-	//check that a room without a south exit is properly validated
+	//check that a room without a south exit is properly validated using southExit()
 	@Test
 	public void testSouthExit_false() 
 	{
@@ -197,7 +197,7 @@ public class RoomTest
 	
 	/*-------------------------------------------------*/
 	
-	//check that a room with both exits is properly validated
+	//check that a room with both exits is properly validated using southExit()
 	@Test
 	public void testSouthExit_both() 
 	{

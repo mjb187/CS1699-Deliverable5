@@ -20,7 +20,7 @@ public class CoffeeMaker {
 	}
 	
 	public static void main(String[] args) {
-		System.out.println("Coffee Maker Quest 1.0");
+		System.out.println("Coffee Maker Quest 2.0");
 		int returnValue = 0;
 		CoffeeMaker cm = new CoffeeMaker();
 		if (args.length == 0) {

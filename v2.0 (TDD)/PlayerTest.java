@@ -45,63 +45,162 @@ public class PlayerTest
 	
 	/*-------------------------------------------------*/
 	
-	//test that hasAllItems() method evaluates properly for no items, one item, two items, and all three items
+	//test that hasAllItems() method evaluates properly for no items
 	//assumes that the getX() methods are working properly
 	@Test
-	public void testHasAllItems()
+	public void testHasAllItems_noItems()
 	{
 		Player p = new Player();
 		
 		assertFalse("Player has no items", p.hasAllItems());
+	}
+	
+	/*-------------------------------------------------*/
+	
+	//test that hasAllItems() method evaluates properly for one items
+	//assumes that the getX() methods are working properly
+	@Test
+	public void testHasAllItems_oneItems()
+	{
+		Player p = new Player();
 		
 		p.getSugar();
 		assertFalse("Player only has sugar", p.hasAllItems());
+	}
+	
+	/*-------------------------------------------------*/
+	
+	//test that hasAllItems() method evaluates properly for two items
+	//assumes that the getX() methods are working properly
+	@Test
+	public void testHasAllItems_twoItems()
+	{
+		Player p = new Player();
 		
+		p.getSugar();
 		p.getCream();
 		assertFalse("Player only has sugar and cream", p.hasAllItems());
+	}
+	
+	/*-------------------------------------------------*/
+	
+	//test that hasAllItems() method evaluates properly for all items
+	//assumes that the getX() methods are working properly
+	@Test
+	public void testHasAllItems_allItems()
+	{
+		Player p = new Player();
 		
+		p.getSugar();
+		p.getCream();
 		p.getCoffee();
 		assertTrue("Player has all items", p.hasAllItems());
 	}
 	
 	/*-------------------------------------------------*/
 	
-	//test that showInventory() method evaluates properly for no items, one item, two items, and all three items
+	//test that showInventory() method evaluates properly for no items
 	//assumes that the getX() methods are working properly
 	@Test
-	public void testShowInventory()
+	public void testShowInventory_noItems()
 	{
 		Player p = new Player();
 		
 		assertTrue("Player has no items", p.showInventory() == 000);
+	}
+	
+	/*-------------------------------------------------*/
+	
+	//test that showInventory() method evaluates properly for one items
+	//assumes that the getX() methods are working properly
+	@Test
+	public void testShowInventory_oneItems()
+	{
+		Player p = new Player();
 		
 		p.getSugar();
 		assertTrue("Player only has sugar", p.showInventory() == 1);
+	}
+	
+	/*-------------------------------------------------*/
+	
+	//test that showInventory() method evaluates properly for two items
+	//assumes that the getX() methods are working properly
+	@Test
+	public void testShowInventory_twoItems()
+	{
+		Player p = new Player();
 		
+		p.getSugar();
 		p.getCream();
 		assertTrue("Player only has sugar and cream", p.showInventory() == 11);
+	}
+	
+	/*-------------------------------------------------*/
+	
+	//test that showInventory() method evaluates properly for all items
+	//assumes that the getX() methods are working properly
+	@Test
+	public void testShowInventory_allItems()
+	{
+		Player p = new Player();
 		
+		p.getSugar();
+		p.getCream();
 		p.getCoffee();
 		assertTrue("Player has all items", p.showInventory() == 111);
 	}
 	
 	/*-------------------------------------------------*/
 	
-	//test that showDrink() method evaluates properly for no items, one item, two items, and all three items
+	//test that showDrink() method evaluates properly for no items
 	//assumes that the getX() methods are working properly
 	@Test
-	public void testDrink()
+	public void testDrink_noItems()
 	{
 		Player p = new Player();
 		
 		assertTrue("Player has no items", p.drink() == 000);
+	}
+	
+	/*-------------------------------------------------*/
+	
+	//test that showDrink() method evaluates properly for one items
+	//assumes that the getX() methods are working properly
+	@Test
+	public void testDrink_oneItems()
+	{
+		Player p = new Player();
 		
 		p.getSugar();
 		assertTrue("Player only has sugar", p.drink() == 1);
-		
+	}
+	
+	/*-------------------------------------------------*/
+	
+	//test that showDrink() method evaluates properly for two items
+	//assumes that the getX() methods are working properly
+	@Test
+	public void testDrink_twoItems()
+	{
+		Player p = new Player();
+
+		p.getSugar();
 		p.getCream();
 		assertTrue("Player only has sugar and cream", p.drink() == 11);
+	}
+	
+	/*-------------------------------------------------*/
+	
+	//test that showDrink() method evaluates properly for all items
+	//assumes that the getX() methods are working properly
+	@Test
+	public void testDrink_allItems()
+	{
+		Player p = new Player();
 		
+		p.getSugar();
+		p.getCream();
 		p.getCoffee();
 		assertTrue("Player has all items", p.drink() == 111);
 	}
