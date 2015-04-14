@@ -248,5 +248,22 @@ public class RoomTest
 		
 		assertNotEquals(result1, result2);
 	}
+	
+	/*-------------------------------------------------*/
+	
+	//check that two Rooms have different descriptions even after all the adjectives and nouns have been exhausted
+	@Test
+	public void testGetDescription_samePseudorandomValue() 
+	{
+		Room testRoom1 = new Room(false, false, false, false, false);
+		String result1 = testRoom1.getDescription();
+		
+		Room testRoom2 = null;
+		for(int i = 0; i < 324; i++)
+			testRoom2 = new Room(false, false, false, false, false);
+		String result2 = testRoom2.getDescription();
+		
+		assertNotEquals(result1, result2);
+	}
 
 }
