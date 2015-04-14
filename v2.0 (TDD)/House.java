@@ -4,8 +4,10 @@
 // CHANGES
 //	- moveNorth() and moveSouth() now return the _currentRoom integer.
 //	- added a getCurrentRoom() function that returns the _currentRoom integer.
+//	- added a getHouseInfo() function that returns the _numRooms integer.
 //	- reduced getCurrentRoomInfo() to only output String description
 //	- moveNorth() and moveSouth() now verify that movement is possible
+//	- House objects are now required to have at least one room, otherwise it defaults to six.
 
 public class House {
 
@@ -16,8 +18,15 @@ public class House {
 	private int _currentRoom = 0;
 	
 	public House(int numRooms) {
-		_numRooms = numRooms;
+		if(numRooms > 0)
+		{
+			_numRooms = numRooms;
+		}
 		_rooms = generateRooms(_numRooms);
+	}
+	
+	public int getHouseInfo() {
+		return _numRooms;
 	}
 	
 	public String getCurrentRoomInfo() {
@@ -27,12 +36,16 @@ public class House {
 	public int moveNorth() {
 		if(_rooms[_currentRoom].northExit())
 			_currentRoom += 1;
+		else
+			System.out.println("There is no north door. You cannot move north.");
 		return _currentRoom;
 	}
 	
 	public int moveSouth() {
 		if(_rooms[_currentRoom].southExit())
 			_currentRoom -= 1;
+		else
+			System.out.println("There is no south door. You cannot move south.");
 		return _currentRoom;
 	}
 	
